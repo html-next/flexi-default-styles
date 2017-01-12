@@ -4,14 +4,15 @@
  * 
  * All unused rules are automatically filtered from your build.
  */
-$gutter-padding: .5rem;
-$columns: 12;
+$gutter-padding: 0;
+$columns: 24;
 $column-prefix: col;
 $include-element-css: true;
 $include-css: true;
 $include-media-css: true;
 $breakpoints: (
   mobile: ('xs', 0),
+  large_moble: ('lm', 466),
   tablet: ('sm', 768),
   desktop: ('md', 992),
   huge: ('lg', 1200)

@@ -2,17 +2,9 @@
 /* global require */
 'use strict';
 
-var LayoutCompiler = require('./lib/layout-compiler');
 var compileScssVariables = require('./lib/scss-variables-compiler');
-var mergeTrees = require('broccoli-merge-trees');
-var Funnel = require('broccoli-funnel');
 var path = require('path');
 var fs = require('fs');
-var commands = require('./lib/commands');
-
-var AttributeConversion = require('./dsl/attribute-conversion');
-var ComponentConversion = require('./dsl/component-conversion');
-var SustainConversion = require('./dsl/sustain-conversion');
 
 function assert(statement, test) {
   if (!test) {
@@ -21,7 +13,7 @@ function assert(statement, test) {
 }
 
 module.exports = {
-  name: 'flexi',
+  name: 'flexi-default-styles',
 
   included: function(app, parentAddon) {
     this._super.included.apply(this, arguments);
@@ -46,7 +38,7 @@ module.exports = {
         ' having trouble registering itself to the parent application.');
     }
 
-    var pathBase = this.project.addonPackages.flexi.path;
+    var pathBase = this.project.addonPackages['flexi-default-styles'].path;
     compileScssVariables(path.join(pathBase, 'addon/styles'), this.flexiConfig());
 
     this.app = app;
@@ -83,49 +75,5 @@ module.exports = {
 
     org.flexi = this.flexiConfig();
     return org;
-  },
-
-  setupPreprocessorRegistry: function(type, registry) {
-    AttributeConversion.prototype.flexiConfig = this.flexiConfig();
-
-    registry.add('htmlbars-ast-plugin', {
-      name: "flexi-attribute-conversion",
-      before: "flexi-component-conversion",
-      plugin: AttributeConversion,
-      baseDir: function() { return __dirname; }
-    });
-
-    registry.add('htmlbars-ast-plugin', {
-      name: "flexi-component-conversion",
-      plugin: ComponentConversion,
-      baseDir: function() { return __dirname; }
-    });
-
-    registry.add('htmlbars-ast-plugin', {
-      name: "flexi-sustain-conversion",
-      plugin: SustainConversion,
-      baseDir: function() { return __dirname; }
-    });
-
-  },
-
-  preprocessTree: function(type, tree) {
-    if (type === 'template') {
-      if (!tree) {
-        throw new Error("No Template Tree is Present");
-      }
-      var layoutTree = new LayoutCompiler(tree, { breakpoints: this.flexiConfig().breakpoints });
-      var templateTree = new Funnel(tree, {
-        exclude: ['**/-layouts/*.hbs']
-      });
-      return mergeTrees([templateTree, layoutTree], { overwrite: true });
-    }
-
-    return tree;
-  },
-
-  includedCommands: function () {
-    return commands;
   }
-
 };
