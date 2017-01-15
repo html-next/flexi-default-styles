@@ -34,7 +34,7 @@ module.exports = {
     }
 
     if (!parentAddon && typeof app.import !== 'function') {
-      throw new Error('ember-font-awesome is being used within another addon or engine and is' +
+      throw new Error('flexi-default-styles is being used within another addon or engine and is' +
         ' having trouble registering itself to the parent application.');
     }
 
