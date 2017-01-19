@@ -1,6 +1,6 @@
 {
   "name": "flexi-default-styles",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Just a layout framework. Design for cross-platform with ease.",
   "keywords": [
     "layout",
@@ -41,7 +41,7 @@
   "dependencies": {
     "ember-cli-babel": "^5.1.7",
     "ember-cli-sass": "^6.0.0",
-    "flexi-config": "0.1.1",
+    "flexi-config": "^0.1.2",
     "rsvp": "^3.2.0"
   },
   "devDependencies": {
@@ -75,7 +75,6 @@
     "versionCompatibility": {
       "ember": ">=1.13.13"
     },
-    "configPath": "tests/dummy/config",
-    "defaultBlueprint": "flexi"
+    "configPath": "tests/dummy/config"
   }
 }
