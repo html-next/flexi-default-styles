@@ -3,7 +3,7 @@
 'use strict';
 
 var compileScssVariables = require('./lib/scss-variables-compiler');
-var getValidatedFlexiConfig = require('flexi-config/lib/get-validated-flexi-config');
+var getValidatedFlexiConfig = require('@html-next/flexi-config/lib/get-validated-flexi-config');
 var path = require('path');
 
 function assert(statement, test) {
