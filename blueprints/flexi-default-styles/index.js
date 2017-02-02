@@ -2,7 +2,7 @@
 module.exports = {
   normalizeEntityName: function() {},
 
-  beforeInstall: function(options) {
+  afterInstall: function() {
     var options = {
       args: ['flexi-config'],
       dryRun: false,
