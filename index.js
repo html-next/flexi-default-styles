@@ -38,7 +38,7 @@ module.exports = {
         ' having trouble registering itself to the parent application.');
     }
 
-    var pathBase = this.project.addonPackages['flexi-default-styles'].path;
+    var pathBase = this.project.addonPackages['@html-next/flexi-default-styles'].path;
     compileScssVariables(path.join(pathBase, 'addon/styles'), this.flexiConfig());
 
     this.app = app;
