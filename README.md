@@ -1,12 +1,12 @@
 # Flexi-default-styles
 
-[![npm version](https://badge.fury.io/js/flexi-default-styles.svg)](http://badge.fury.io/js/flexi-default-styles)
-[![Ember Observer Score](http://emberobserver.com/badges/flexi-default-styles.svg)](http://emberobserver.com/addons/flexi-default-styles)
+[![npm version](https://badge.fury.io/js/%40html-next%2Fflexi-default-styles.svg)](https://badge.fury.io/js/%40html-next%2Fflexi-default-styles)
 [![Build Status](https://travis-ci.org/html-next/flexi-default-styles.svg)](https://travis-ci.org/html-next/flexi-default-styles)
 [![Code Climate](https://codeclimate.com/github/html-next/flexi-default-styles/badges/gpa.svg)](https://codeclimate.com/github/html-next/flexi-default-styles)
 
 Default styles to match the attributes converted by [flexi-dsl](https://github.com/html-next/flexi-dsl), as well as styles for the [flexi-layouts](https://github.com/html-next/flexi-layouts) components.
 
+https://flexi.readme.io/docs/introduction
 
 ### Installation
 
@@ -19,83 +19,13 @@ ember install flexi
 This will provide a prompt to install only the addons you want. Flexi will also maintain
 compatibility between addons.
 
+Alternatively install just this package:
 
-### Config
-
-The flexi-config dependency's default blueprint will install `config/flexi.js` with the [default settings](https://github.com/html-next/flexi-config/blob/master/blueprints/flexi-config/files/config/flexi.js).
-
-**Settings**
-
-```js
-{
-  // the number of columns for the grid
-  columns: 12,
-
-  // optional, used for column classes: `${colPrefix}-${breakpointPrefix}-${columnNumber}`
-  columnPrefix: 'col',
-
-  // if false, @media css is not included
-  includeMediaCSS: true,
-
-  // if false, default element styles are not included
-  includeElementCSS: true,
-
-  // if true, will convert layout attributes on non-layout elements to classes as well
-  transformAllElementLayoutAttributes: false,
-
-  // grid and layout element gutters
-  gutterPadding: '.5rem',
-
-  // if false, no styles are included (trumps `includeMediaCSS` and `includeElementCSS`)
-  includeCSS: true,
-
-  // an array of breakpoints to use in your app (see below)
-  breakpoints: []
-}
+```cli
+ember instal @html-next/flexi-default-styles
 ```
 
-**config.breakpoints**
-
-Your config must have a `breakpoints` array.  A breakpoint has the structure:
-
-```js
-  { name: 'mobile', prefix: 'xs', begin: 0 }
-```
-
-`name` will be used for blueprint generation of layout names, and is made available as an `is<Name>`
-boolean on the `device/layout` service.
-
-`prefix` is a shorthand for the breakpoint name used for column attributes, classes, and responsive utilities.
-With a `prefix` of `xs`.
-
-`begin` is the pixel value at which the breakpoint becomes valid if equal to or larger than.
-
-**Using a breakpoint's prefix**
-
-`.col-xs-1` ... `.col-xs-n` will be valid class names (if `columnPrefix` is set to `col`).
-```html
-<box xs="n visible vertical">
-```
-
-Is valid shorthand for
-```html
-<box class="col-xs-n visible-xs vertical-xs">
-```
-
-The following responsive utilities are made available for each prefix:
-
-```css
-.hidden-xs,
-.visible-xs,
-.container-xs,
-.vertical-xs,
-.horizontal-xs,
-.wrap-xs,
-.nowrap-xs {}
-```
-
-[Read More](https://html-next.github.io/flexi/#/docs/settings)
-
+Note that that flexi attributes will not be converted into classes without [flexi-dsl](https://github.com/html-next/flexi-dsl).
 
 ## Support, Questions, Collaboration
 
