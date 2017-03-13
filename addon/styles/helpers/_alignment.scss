@@ -1,4 +1,6 @@
 @if ($include-css) {
+  @include make-breakpoint-helpers();
+
   .flexi-fit {
     @include flex(none);
   }

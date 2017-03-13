@@ -1,0 +1,80 @@
+@mixin make-breakpoint-helpers() {
+  @each $name, $breakpoint-setup in $breakpoints {
+    $bp-prefix: nth($breakpoint-setup, 1);
+    .flexi-fit-#{$bp-prefix} {
+      @include flex(none);
+    }
+
+    .flexi-fill-#{$bp-prefix} {
+      @include flex(1 0 auto);
+    }
+
+    .flexi-wrap-#{$bp-prefix} {
+      @include flexDisplay();
+      @include flexWrap(wrap);
+    }
+
+    .flexi-nowrap-#{$bp-prefix} {
+      @include flexDisplay();
+      @include flexWrap(nowrap);
+    }
+
+    .flexi-horizontal-#{$bp-prefix} {
+      @include flexDirection(row);
+    }
+
+    .flexi-vertical-#{$bp-prefix} {
+      @include flexDirection(column);
+    }
+
+    .justify-start-#{$bp-prefix} {
+      @include flexJustify(flex-start);
+    }
+
+    .justify-end-#{$bp-prefix} {
+      @include flexJustify(flex-end);
+    }
+
+    .justify-center-#{$bp-prefix} {
+      @include flexJustify(center);
+    }
+
+    .justify-between-#{$bp-prefix} {
+      @include flexJustify(space-between);
+    }
+
+    .justify-around-#{$bp-prefix} {
+      @include flexJustify(space-around);
+    }
+
+    .align-start-#{$bp-prefix} {
+      @include flexAlignItems(flex-start);
+    }
+
+    .align-end-#{$bp-prefix} {
+      @include flexAlignItems(flex-end);
+    }
+
+    .align-stretch-#{$bp-prefix} {
+      @include flexAlignItems(stretch);
+    }
+
+    .align-center-#{$bp-prefix} {
+      @include flexAlignItems(center);
+    }
+
+    .align-baseline-#{$bp-prefix} {
+      @include flexAlignItems(baseline);
+    }
+
+    .text-left-#{$bp-prefix} {
+      text-align: left;
+    }
+    .text-right-#{$bp-prefix} {
+      text-align: right;
+    }
+    .text-center-#{$bp-prefix} {
+      text-align: center;
+    }
+  }
+}
