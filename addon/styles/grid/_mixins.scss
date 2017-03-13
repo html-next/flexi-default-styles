@@ -118,6 +118,50 @@
         @include flexAlignItems(baseline);
       }
 
+      .align-content-start-#{$bp-prefix} {
+        @include flexAlignContent(flex-start);
+      }
+
+      .align-content-end-#{$bp-prefix} {
+        @include flexAlignContent(flex-end);
+      }
+
+      .align-content-stretch-#{$bp-prefix} {
+        @include flexAlignContent(stretch);
+      }
+
+      .align-content-center-#{$bp-prefix} {
+        @include flexAlignContent(center);
+      }
+
+      .align-content-around-#{$bp-prefix} {
+        @include flexAlignContent(space-around);
+      }
+
+      .align-content-between-#{$bp-prefix} {
+        @include flexAlignContent(space-between);
+      }
+
+      .align-self-start-#{$bp-prefix} {
+        @include flexAlignSelf(flex-start);
+      }
+
+      .align-self-end-#{$bp-prefix} {
+        @include flexAlignSelf(flex-end);
+      }
+
+      .align-self-stretch-#{$bp-prefix} {
+        @include flexAlignSelf(stretch);
+      }
+
+      .align-self-center-#{$bp-prefix} {
+        @include flexAlignSelf(center);
+      }
+
+      .align-self-baseline-#{$bp-prefix} {
+        @include flexAlignSelf(baseline);
+      }
+
       .text-left-#{$bp-prefix} {
         text-align: left;
       }
