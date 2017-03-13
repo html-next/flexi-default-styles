@@ -1,12 +1,10 @@
-
 @mixin make-col($size, $columns, $gutter-padding) {
   @include element();
   padding-right: pixel($gutter-padding / 2);
-  padding-left:  pixel($gutter-padding / 2);
+  padding-left: pixel($gutter-padding / 2);
   @include flex(1 0 percentage($size / $columns));
   max-width: percentage($size / $columns);
 }
-
 
 // Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
 // Makes the @content apply to the given breakpoint and wider.
@@ -78,6 +76,56 @@
 
       .vertical-#{$bp-prefix} {
         @include flexDirection(column);
+      }
+
+      .justify-start-#{$bp-prefix} {
+        @include flexJustify(flex-start);
+      }
+
+      .justify-end-#{$bp-prefix} {
+        @include flexJustify(flex-end);
+      }
+
+      .justify-center-#{$bp-prefix} {
+        @include flexJustify(center);
+      }
+
+      .justify-between-#{$bp-prefix} {
+        @include flexJustify(space-between);
+      }
+
+      .justify-around-#{$bp-prefix} {
+        @include flexJustify(space-around);
+      }
+
+      .align-start-#{$bp-prefix} {
+        @include flexAlignItems(flex-start);
+      }
+
+      .align-end-#{$bp-prefix} {
+        @include flexAlignItems(flex-end);
+      }
+
+      .align-stretch-#{$bp-prefix} {
+        @include flexAlignItems(stretch);
+      }
+
+      .align-center-#{$bp-prefix} {
+        @include flexAlignItems(center);
+      }
+
+      .align-baseline-#{$bp-prefix} {
+        @include flexAlignItems(baseline);
+      }
+
+      .text-left-#{$bp-prefix} {
+        text-align: left;
+      }
+      .text-right-#{$bp-prefix} {
+        text-align: right;
+      }
+      .text-center-#{$bp-prefix} {
+        text-align: center;
       }
 
       // columns
