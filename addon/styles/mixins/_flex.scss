@@ -27,6 +27,12 @@
   flex-wrap: $val;
 }
 
+@mixin flexAlignContent($val) {
+  -webkit-align-content: $val;
+  -ms-align-content: $val;
+  align-content: $val;
+}
+
 @mixin flexAlignItems($val) {
   -webkit-box-align: $val;
   -webkit-align-items: $val;
@@ -36,6 +42,8 @@
 
 @mixin flexAlignSelf($val) {
   -ms-flex-item-align: $val;
+  -webkit-align-self: $val;
+  -ms-align-self: $val;
   align-self: $val;
 }
 
@@ -66,8 +74,6 @@
   -webkit-justify-content: $val;
   justify-content: $val;
 }
-
-
 
 @mixin flexOrder($val) {
   -webkit-box-ordinal-group: $val;

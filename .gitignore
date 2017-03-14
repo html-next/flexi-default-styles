@@ -6,6 +6,7 @@
 # compiled output
 /dist
 /tmp
+/addon/styles/_variables.scss
 
 # dependencies
 /node_modules

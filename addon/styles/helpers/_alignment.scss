@@ -65,6 +65,50 @@
     @include flexAlignItems(baseline);
   }
 
+  .align-content-start {
+    @include flexAlignContent(flex-start);
+  }
+
+  .align-content-end {
+    @include flexAlignContent(flex-end);
+  }
+
+  .align-content-stretch {
+    @include flexAlignContent(stretch);
+  }
+
+  .align-content-center {
+    @include flexAlignContent(center);
+  }
+
+  .align-content-around {
+    @include flexAlignContent(space-around);
+  }
+
+  .align-content-between {
+    @include flexAlignContent(space-between);
+  }
+
+  .align-self-start {
+    @include flexAlignSelf(flex-start);
+  }
+
+  .align-self-end {
+    @include flexAlignSelf(flex-end);
+  }
+
+  .align-self-stretch {
+    @include flexAlignSelf(stretch);
+  }
+
+  .align-self-center {
+    @include flexAlignSelf(center);
+  }
+
+  .align-self-baseline {
+    @include flexAlignSelf(baseline);
+  }
+
   .text-left {
     text-align: left;
   }
