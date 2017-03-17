@@ -1,5 +1,4 @@
-/* jshint node: true */
-/* global require */
+/* eslint-env node */
 'use strict';
 
 var compileScssVariables = require('./lib/scss-variables-compiler');
