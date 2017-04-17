@@ -1,7 +1,8 @@
 /* eslint-env node */
 'use strict';
 
-var compileScssVariables = require('./lib/scss-variables-compiler');
+var FlexiVariableCompiler = require('./lib/scss-variables-compiler');
+var mergeTrees = require('broccoli-merge-trees');
 var getValidatedFlexiConfig = require('@html-next/flexi-config/lib/get-validated-flexi-config');
 var path = require('path');
 
@@ -37,11 +38,17 @@ module.exports = {
         ' having trouble registering itself to the parent application.');
     }
 
-    var pathBase = this.project.addonPackages['@html-next/flexi-default-styles'].path;
-    compileScssVariables(path.join(pathBase, 'addon/styles'), this.flexiConfig());
-
     this.app = app;
     return app;
+  },
+
+  treeForAddonStyles(tree) {
+    console.log('OMG')
+    let stylesRoot = path.join(__dirname, 'addon/styles');
+    return mergeTrees([
+      stylesRoot,
+      new FlexiVariableCompiler(stylesRoot, this.flexiConfig())
+    ], { overwrite: true });
   },
 
   isDevelopingAddon: function() {
