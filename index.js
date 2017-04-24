@@ -5,12 +5,6 @@ var compileScssVariables = require('./lib/scss-variables-compiler');
 var getValidatedFlexiConfig = require('@html-next/flexi-config/lib/get-validated-flexi-config');
 var path = require('path');
 
-function assert(statement, test) {
-  if (!test) {
-    throw new Error(statement);
-  }
-}
-
 module.exports = {
   name: 'flexi-default-styles',
 
