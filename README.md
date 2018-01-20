@@ -1,5 +1,7 @@
 # Flexi-default-styles
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/html-next/flexi-default-styles.svg)](https://greenkeeper.io/)
+
 [![npm version](https://badge.fury.io/js/%40html-next%2Fflexi-default-styles.svg)](https://badge.fury.io/js/%40html-next%2Fflexi-default-styles)
 [![Build Status](https://travis-ci.org/html-next/flexi-default-styles.svg)](https://travis-ci.org/html-next/flexi-default-styles)
 [![Code Climate](https://codeclimate.com/github/html-next/flexi-default-styles/badges/gpa.svg)](https://codeclimate.com/github/html-next/flexi-default-styles)
