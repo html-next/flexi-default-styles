@@ -1,4 +1,3 @@
-/* eslint-env node */
 'use strict';
 
 const FlexiVariableCompiler = require('./lib/scss-variables-compiler');
@@ -7,9 +6,9 @@ const getValidatedFlexiConfig = require('@html-next/flexi-config/lib/get-validat
 const path = require('path');
 
 module.exports = {
-  name: 'flexi-default-styles',
+  name: '@html-next/flexi-default-styles',
 
-  included: function(app, parentAddon) {
+  included(app, parentAddon) {
     this._super.included.apply(this, arguments);
 
     // Quick fix for add-on nesting
@@ -28,8 +27,8 @@ module.exports = {
     }
 
     if (!parentAddon && typeof app.import !== 'function') {
-      throw new Error('flexi-default-styles is being used within another addon or engine and is' +
-        ' having trouble registering itself to the parent application.');
+      throw new Error('@html-next/flexi-default-styles is being used within another addon or engine and is'
+      + ' having trouble registering itself to the parent application.');
     }
 
     this.app = app;
@@ -40,11 +39,11 @@ module.exports = {
     return mergeTrees([
       tree,
       new FlexiVariableCompiler(path.join(__dirname, 'addon/styles'),
-                                getValidatedFlexiConfig(this.project.root))
+        getValidatedFlexiConfig(this.project.root))
     ], { overwrite: true });
   },
 
-  isDevelopingAddon: function() {
+  isDevelopingAddon() {
     return false;
   }
 };
