@@ -6,7 +6,7 @@ const getValidatedFlexiConfig = require('@html-next/flexi-config/lib/get-validat
 const path = require('path');
 
 module.exports = {
-  name: '@html-next/flexi-default-styles',
+  name: require('./package').name,
 
   included(app, parentAddon) {
     this._super.included.apply(this, arguments);
